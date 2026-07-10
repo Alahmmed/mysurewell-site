@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surewell | Illinois Health &amp; Life Insurance, Made Simple</title>
+<meta name="description" content="Surewell is a licensed Illinois insurance agency that helps you choose a Medicare, Medicaid, or private health plan that fits your medications, your doctors, and your budget. Guided by a pharmacist's perspective.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#115E59;        /* Primary Deep Teal */
+    --ink:#0B3D3A;         /* Ink Teal */
+    --paper:#FAFAF8;       /* Warm Paper */
+    --cream:#F4F1EA;       /* Soft Cream */
+    --sage:#9CAF88;        /* Sage */
+    --gold:#C9A227;        /* Muted Gold accent */
+    --charcoal:#1F2937;    /* Body text */
+    --check:#C9D6B8;       /* Logo check */
+    --line:#E7E3D9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',Inter,system-ui,-apple-system,sans-serif;
+    color:var(--charcoal);background:var(--paper);
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--ink);line-height:1.15;font-weight:600;letter-spacing:-0.01em}
+  a{color:var(--teal)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-block;padding:14px 26px;border-radius:10px;font-weight:600;text-decoration:none;font-size:16px;transition:transform .08s ease,box-shadow .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--teal);color:#fff;box-shadow:0 6px 18px rgba(17,94,89,.22)}
+  .btn-secondary{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:20;background:rgba(250,250,248,.92);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1080px;margin:0 auto}
+  .nav .logo{display:flex;align-items:center}
+  .nav a.callbtn{font-weight:600;text-decoration:none;color:#fff;background:var(--teal);padding:10px 18px;border-radius:10px;font-size:15px}
+
+  /* Hero */
+  .hero{padding:72px 0 56px}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+  .eyebrow{color:var(--teal);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+  .hero h1{font-size:46px;margin-bottom:20px}
+  .hero p.lede{font-size:19px;max-width:36em;margin-bottom:28px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .microcopy{margin-top:16px;color:#5b6b66;font-size:15px}
+  .shield-art{display:flex;justify-content:center;align-items:center}
+  .shield-art .ring{width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at center,var(--cream) 0 60%,transparent 61%);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px var(--line)}
+
+  /* Section shells */
+  section.band{padding:60px 0}
+  .band.cream{background:var(--cream)}
+  .sec-head{text-align:center;max-width:40em;margin:0 auto 40px}
+  .sec-head h2{font-size:32px;margin-bottom:12px}
+  .sec-head p{color:#4b5a55}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .step{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:28px}
+  .band.cream .step{background:#fff}
+  .step .num{width:38px;height:38px;border-radius:10px;background:var(--teal);color:#fff;font-family:'Fraunces',serif;font-weight:600;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:18px}
+  .step h3{font-size:20px;margin-bottom:8px}
+  .step p{font-size:16px;color:#3f4a47}
+
+  /* What we help with */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px}
+  .card h3{font-size:20px;margin-bottom:8px}
+  .card p{font-size:16px;color:#3f4a47}
+  .card .tag{display:inline-block;font-size:13px;font-weight:600;color:var(--teal);background:rgba(156,175,136,.22);padding:4px 10px;border-radius:999px;margin-bottom:14px}
+
+  /* Pharmacist band */
+  .pharm{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
+  .pharm h2{font-size:30px;margin-bottom:14px}
+  .pharm p{font-size:18px;color:#37423f;max-width:38em}
+  .pharm .mark{display:flex;justify-content:center}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .contact-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:30px}
+  .contact-card h3{font-size:22px;margin-bottom:18px}
+  .cline{display:flex;gap:12px;margin-bottom:12px;font-size:16px}
+  .cline strong{min-width:64px;color:var(--ink)}
+  .contact-cta{display:flex;flex-direction:column;gap:14px;justify-content:center}
+  .contact-cta .btn{text-align:center}
+
+  /* Footer */
+  footer{background:var(--ink);color:#d7e1de;padding:48px 0 36px;font-size:14px;line-height:1.65}
+  footer .fgrid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+  footer h4{color:#fff;font-family:'Fraunces',serif;font-size:16px;margin-bottom:12px;font-weight:600}
+  footer a{color:#eaf2ef}
+  .disclaimer{border-top:1px solid rgba(255,255,255,.15);margin-top:32px;padding-top:20px;color:#a9bcb7;font-size:12.5px}
+  .disclaimer p{margin-bottom:10px}
+  .placeholder{background:#FFF7E0;border:1px dashed var(--gold);color:#6b5a12;padding:2px 6px;border-radius:5px;font-weight:600}
+
+  /* Responsive */
+  @media(max-width:820px){
+    .hero-grid{grid-template-columns:1fr;gap:28px}
+    .shield-art{order:-1}
+    .shield-art .ring{width:220px;height:220px}
+    .hero h1{font-size:34px}
+    .steps,.cards{grid-template-columns:1fr}
+    .pharm{grid-template-columns:1fr;gap:24px}
+    .contact-grid{grid-template-columns:1fr}
+    footer .fgrid{grid-template-columns:1fr}
+    .nav a.callbtn{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <span class="logo" aria-label="Surewell">
+      <svg width="200" height="44" viewBox="0 0 220 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Surewell">
+        <path d="M24 4.5 L39 9.2 V22.5 C39 32.4 32.6 39.4 24 43.5 C15.4 39.4 9 32.4 9 22.5 V9.2 Z" fill="#115E59"></path>
+        <path d="M17 24 L21.8 28.8 L31.2 18" stroke="#C9D6B8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+        <text x="52" y="32" font-family="Fraunces, Georgia, serif" font-size="27" font-weight="600" letter-spacing="-0.4" fill="#0B3D3A">Surewell</text>
+      </svg>
+    </span>
+    <a class="callbtn" href="tel:+13123003000">Call (312) 300-3000</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Illinois Health &amp; Life Insurance</div>
+        <h1>Insurance that fits your medications, your doctors, and your budget.</h1>
+        <p class="lede">Choosing a Medicare, Medicaid, or private health plan is confusing. Surewell makes it simple. We start with the prescriptions you take and the doctors you see, then help you compare your options and pick a plan that actually covers them, so you understand the real cost before you enroll.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="tel:+13123003000">Call (312) 300-3000</a>
+          <a class="btn btn-secondary" href="mailto:info@mysurewell.com">Email us</a>
+        </div>
+        <p class="microcopy">Free to talk. No pressure. Serving all of Illinois.</p>
+      </div>
+      <div class="shield-art">
+        <div class="ring">
+          <svg width="150" height="150" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Surewell shield">
+            <path d="M24 4.5 L39 9.2 V22.5 C39 32.4 32.6 39.4 24 43.5 C15.4 39.4 9 32.4 9 22.5 V9.2 Z" fill="#115E59"></path>
+            <path d="M17 24 L21.8 28.8 L31.2 18" stroke="#C9D6B8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE HELP -->
+  <section class="band cream" id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>How we help</h2>
+        <p>A simple, three-step way to find coverage that works for your health, not just the lowest sticker price.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>We start with you</h3>
+          <p>Your medications, your doctors, and your pharmacy. We build the list first, because that is what a plan has to cover.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>We compare your options</h3>
+          <p>Medicare, Medicaid, and private plans, side by side, in plain English. No jargon and no pressure.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>You choose with confidence</h3>
+          <p>See what you will really pay for the year, then we handle the enrollment paperwork with you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE HELP WITH -->
+  <section class="band" id="coverage">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>What we help with</h2>
+        <p>Independent guidance across the coverage most Illinois families need.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <span class="tag">Medicare</span>
+          <h3>Medicare plans</h3>
+          <p>Medicare Advantage, Part D drug plans, and Medicare Supplement coverage, matched to the medications you actually take.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Health</span>
+          <h3>Individual &amp; family health</h3>
+          <p>Marketplace (ACA) and private health plans for individuals, families, and small businesses. We also help you understand your Medicaid options.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Life</span>
+          <h3>Life insurance</h3>
+          <p>Term and whole life coverage to protect the people who depend on you, explained simply.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHARMACIST -->
+  <section class="band cream" id="why">
+    <div class="wrap pharm">
+      <div class="mark">
+        <svg width="130" height="130" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Surewell shield">
+          <path d="M24 4.5 L39 9.2 V22.5 C39 32.4 32.6 39.4 24 43.5 C15.4 39.4 9 32.4 9 22.5 V9.2 Z" fill="#115E59"></path>
+          <path d="M17 24 L21.8 28.8 L31.2 18" stroke="#C9D6B8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+        </svg>
+      </div>
+      <div>
+        <h2>Guided by a pharmacist's eye</h2>
+        <p>Surewell is led with a pharmacist's perspective. A pharmacist spends every day inside drug formularies, coverage tiers, and prior authorizations, the exact things that decide what you pay at the pharmacy counter. That is the lens we bring to every plan we compare for you, so your coverage matches the way you actually use your medications and your doctors.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="band" id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Talk to a real person</h2>
+        <p>Have a question about a plan, a medication, or your options? Reach out. There is no cost to talk.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Contact Surewell</h3>
+          <div class="cline"><strong>Phone</strong><a href="tel:+13123003000">(312) 300-3000</a></div>
+          <div class="cline"><strong>Fax</strong><span>(312) 300-3111</span></div>
+          <div class="cline"><strong>Email</strong><a href="mailto:info@mysurewell.com">info@mysurewell.com</a></div>
+          <div class="cline"><strong>Hours</strong><span>Mon&ndash;Fri 9:00 AM to 3:00 PM<br>Sat &amp; Sun closed</span></div>
+          <div class="cline"><strong>Area</strong><span>Serving all of Illinois, by appointment</span></div>
+        </div>
+        <div class="contact-cta">
+          <a class="btn btn-primary" href="tel:+13123003000">Call now</a>
+          <a class="btn btn-secondary" href="mailto:info@mysurewell.com">Send an email</a>
+          <p class="microcopy">Prefer we call you? Email your name and number and we will reach out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>Surewell, Inc.</h4>
+        <p>
+          505 N DuSable Lake Shore Dr, Suite 211<br>
+          Chicago, IL 60611<br>
+          P (312) 300-3000 &middot; F (312) 300-3111<br>
+          <a href="mailto:info@mysurewell.com">info@mysurewell.com</a> &middot; mysurewell.com<br>
+          Hours: Mon&ndash;Fri 9:00 AM to 3:00 PM
+        </p>
+      </div>
+      <div>
+        <h4>Licensing</h4>
+        <p>Surewell, Inc. is a licensed insurance producer in Illinois. License #3004273078.</p>
+        <p>Insurance is offered through licensed producers. Plan availability and benefits vary.</p>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <p><strong>Not connected with the government.</strong> Surewell, Inc. is a private insurance agency. We are not affiliated with, endorsed by, or connected to Medicare, Medicaid, the Centers for Medicare &amp; Medicaid Services (CMS), or any government agency.</p>
+      <p><strong>Medicare notice.</strong> We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.</p>
+      <p><strong>Health Insurance Marketplace.</strong> Surewell, Inc. is an independent insurance agency and is not the Health Insurance Marketplace. To view all available plans or to enroll directly, visit Get Covered Illinois (getcovered.illinois.gov) or HealthCare.gov.</p>
+      <p><strong>Privacy.</strong> We only use the information you share with us to help with your insurance needs. We do not sell your personal information. Read our full <a href="privacy.html" style="color:#eaf2ef;text-decoration:underline">Privacy Policy</a>.</p>
+      <p>&copy; 2026 Surewell, Inc. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
